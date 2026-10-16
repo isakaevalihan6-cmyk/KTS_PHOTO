@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediaSpace — Галерея</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="#" class="logo">media<span>space.</span></a>
+<nav class="header-nav">
+  <a href="#gallery" class="nav-button">Галерея</a>
+
+  <button type="button" id="adminOpenBtn" class="nav-button">
+    Администрация
+  </button>
+</nav>
+</header>
+
+<section class="hero">
+  <p class="subtitle">ТВОЁ ПРОСТРАНСТВО МЕДИА</p>
+  <h1>Моменты,<br>которые <span>остаются.</span></h1>
+  <p class="description">
+    Фотографии и видео в одном месте.
+    Смотри и скачивай любимые моменты.
+  </p>
+  <a href="#gallery" class="button">Открыть галерею ↗</a>
+</section>
+
+<main id="gallery">
+  <div class="gallery-header">
+    <div>
+      <p class="subtitle">КОЛЛЕКЦИЯ</p>
+      <h2>Медиафайлы</h2>
+    </div>
+    <input type="search" id="search" placeholder="Поиск файлов...">
+  </div>
+
+  <div class="filters">
+    <button class="filter active" data-type="all">Все</button>
+    <button class="filter" data-type="image">Фото</button>
+    <button class="filter" data-type="video">Видео</button>
+  </div>
+
+  <div class="gallery" id="galleryList">
+    <p>Загрузка файлов...</p>
+  </div>
+
+  <section class="upload admin-modal" id="admin">
+  <div class="admin-modal-content">
+    <button type="button" id="adminCloseBtn" class="admin-close">&times;</button>
+    <p class="subtitle">УПРАВЛЕНИЕ MEDIASPACE</p>
+    <h2>Панель администратора</h2>
+    <p class="upload-description">
+      Войди в аккаунт администратора, чтобы добавлять и удалять материалы.
+    </p>
+
+    <form id="loginForm">
+      <input
+        type="email"
+        id="adminEmail"
+        placeholder="Email администратора"
+        autocomplete="username"
+        required
+      >
+      <input
+        type="password"
+        id="adminPassword"
+        placeholder="Пароль"
+        autocomplete="current-password"
+        required
+      >
+      <button class="button" type="submit">Войти</button>
+    </form>
+
+    <div id="adminPanel" hidden>
+      <p id="adminStatus"></p>
+
+      <label class="dropzone" for="fileInput">
+        <span class="upload-icon">＋</span>
+        <strong>Выбрать фотографии или видео</strong>
+        <span>Можно выбрать несколько файлов</span>
+        <input
+          type="file"
+          id="fileInput"
+          accept="image/*,video/*"
+          multiple
+        >
+      </label>
+
+      <input
+        type="text"
+        id="fileTitle"
+        placeholder="Общее название для выбранных файлов (необязательно)"
+      >
+
+      <button class="button upload-button" id="uploadButton" type="button">
+        Загрузить в облако
+      </button>
+      <button class="button" id="logoutButton" type="button">
+        Выйти
+      </button>
+    </div>
+
+    <p id="message" role="status"></p>
+      </div>
+  </section>
+</main>
+
+<footer>
+  <a href="#" class="logo">media<span>space.</span></a>
+  <p>Твоя коллекция. Твои моменты.</p>
+  <a href="#gallery">Наверх ↑</a>
+</footer>
+
+<div class="subscribe-overlay" id="subscribeModal">
+  <div class="subscribe-modal">
+    <button class="modal-close" id="closeModal" aria-label="Закрыть">
+      &times;
+    </button>
+
+    <p class="subtitle">ПОДДЕРЖИ MEDIASPACE</p>
+    <h2>Одна маленькая просьба</h2>
+    <p class="modal-description">
+      Подпишись на наши социальные сети, чтобы поддержать проект. Спасибо!
+    </p>
+
+   
+<div class="social-links">
+
+  <a href="https://www.youtube.com/@Taekwondo_Edit1" target="_blank"
+     rel="noopener noreferrer" class="social social-youtube">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+    </svg>
+
+    <span>YouTube</span>
+    <span class="social-arrow">↗</span>
+  </a>
+
+  <a href="https://www.tiktok.com/@taekwondo_edit0" target="_blank"
+     rel="noopener noreferrer" class="social social-tiktok">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19.6 6.2a6.8 6.8 0 0 1-4.1-4.1A7 7 0 0 1 15.2 0h-4.6v16.3a3 3 0 1 1-3-3c.5 0 1 .1 1.4.3V8.9a8 8 0 1 0 6.2 7.8V8.4a11.3 11.3 0 0 0 6.6 2.1V5.9c-.8.1-1.5.2-2.2.3Z"/>
+    </svg>
+
+    <span>TikTok</span>
+    <span class="social-arrow">↗</span>
+  </a>
+
+  <a href="https://t.me/" target="_blank"
+     rel="noopener noreferrer" class="social social-telegram">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21.9 3.2 18.6 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.6l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.7 3c.9-.3 1.6.2 1.2 1.2Z"/>
+    </svg>
+
+    <span>Telegram</span>
+    <span class="social-arrow">↗</span>
+  </a>
+
+</div>
+
+
+    <button class="button continue-button" id="continueDownload" type="button">
+      Продолжить и скачать ↓
+    </button>
+    <p class="modal-note">
+      Это просьба о подписке — сайт не проверяет её автоматически.
+    </p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+
+
+</body>
+</html>
